@@ -8,10 +8,11 @@ import org.testng.annotations.Test;
 
 import addToCart.AddToCart;
 import configs.FetchData;
+import flipkartHomePage.FlipkartSignUp;
 import flipkartHomePage.Login;
 
 public class ApplicationTest {
-	@Test(priority=1)
+	@Test(priority=2)
 	public void loginTest() throws IOException {
 		FetchData.fetchData();
 		String userName = FetchData.username;
@@ -19,11 +20,18 @@ public class ApplicationTest {
 		Login.login(userName, password);
 	}
 
-	@Test(priority= 2)
+	@Test(priority= 3)
 	public void addToCartTest() throws Exception {
 		AddToCart.search("iphone");
 		//AddToCart.search("Samsung 253 L Frost Free Double Door 2 Star Refrigerator");
 		AddToCart.viewCart("Apple iPhone SE (Space Grey, 32 GB)");
 	}
 	
-}
+	@Test(priority= 1)
+	
+		public void signuptest()
+		{
+		FlipkartSignUp.signup();
+		
+		}
+	}
